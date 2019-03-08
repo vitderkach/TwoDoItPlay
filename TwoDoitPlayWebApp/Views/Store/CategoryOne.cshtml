@@ -1,0 +1,640 @@
+﻿@model TwoDoitPlayWebApp.Models.ItemViewModel
+@{
+    ViewData["Title"] = "CategoryOne";
+}
+
+@section FixedBar{
+    <div class="fixedbar">
+        <div class="mdc-menu-surface--anchor">
+            <button id="menubuttongenre" class=" mdc-button mdc-button--unelevated">
+                <span class="mdc-button__text">Genres</span>
+            </button>
+
+            <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                    <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">Crime</span>
+                    </li>
+                    <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">Fantasy</span>
+                    </li>
+                    <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">Romantic</span>
+                    </li>
+                    <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">Detective</span>
+                    </li>
+                    <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">Horror</span>
+                    </li>
+                    <li class="mdc-list-item" role="menuitem">
+                        <span class="mdc-list-item__text">Western</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mdc-tab-bar" role="tablist">
+            <div class="mdc-tab-scroller mdc-tab-scroller--align-center">
+                <div class="mdc-tab-scroller__scroll-area">
+                    <div class="mdc-tab-scroller__scroll-content">
+                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true">
+                            <span class="mdc-tab__content">
+                                <span class="mdc-tab__text-label">Main</span>
+                            </span>
+                            <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                            </span>
+                            <span class="mdc-tab__ripple"></span>
+                        </button>
+                        <button class="mdc-tab" role="tab" aria-selected="true">
+                            <span class="mdc-tab__content">
+                                <span class="mdc-tab__text-label">The Best</span>
+                            </span>
+                            <span class="mdc-tab-indicator">
+                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                            </span>
+                            <span class="mdc-tab__ripple"></span>
+                        </button>
+                        <button class="mdc-tab" role="tab" aria-selected="true">
+                            <span class="mdc-tab__content">
+                                <span class="mdc-tab__text-label">New</span>
+                            </span>
+                            <span class="mdc-tab-indicator">
+                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                            </span>
+                            <span class="mdc-tab__ripple"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%"></div>
+    </div>
+}
+
+
+
+@if (!(Model is TwoDoitPlayWebApp.Models.ItemViewModel))
+{
+
+
+
+    <div class="table table table--main">
+        <div class="table__column table__column--padding">
+            <h2 class="mdc-typography--headline2">CategoryOne</h2>
+        </div>
+        <div class="table__column table__column--side-padding">
+            <h3>The Best</h3>
+        </div>
+        <div class="table__column table__column--side-padding">
+            <form>
+                <button class="mdc-button mdc-theme--on-primary mdc-theme--secondary-bg">
+                    <span class="mdc-button__label">More</span>
+                </button>
+            </form>
+        </div>
+        <div class="table__column table__column--padding">
+            <div class="card-gallery">
+
+                <div class="mdc-card store-card">
+                    <a class="mdc-card__primary-action" asp-route-id="1">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition table--flex">
+                            <div class="table__row table__row--space-between">
+                                <div class="table__column">
+                                    <h2 class="card__descrition__header">Fishes</h2>
+                                    <h2 class="card__descrition__subtitle">FishProvider</h2>
+                                </div>
+                                <div class="table__column">
+                                    <p style="text-align:right">@string.Format("{0:C}", 50.02)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+
+                <div class="mdc-card store-card">
+                    <div class="mdc-card__primary-action">
+                        <div class="mdc-card__media mdc-card__media--square" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                        </div>
+                        <div class="card__descrition">
+                            <h2 class="card__descrition__header">Fishes</h2>
+                            <h2 class="card__descrition__subtitle">FishProvider</h2>
+                        </div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                            <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                            <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+else
+{
+    <div class="table table--main">
+        <div class="table__row table__row--main">
+            <div class="mdc-elevation--z5 table--main__item">
+                <div class="item__top">
+                    <div class="item__top--left-section">
+                        <img class="item__logo" src="@Model.LogoUrl" alt="Alternate Text" />
+                    </div>
+                    <div class="item__top--right-section">
+                        <h3 class="item__header">@Model.Name</h3>
+                        <a href="#">@Model.Provider</a>
+                        <a href="#">@Model.SubCategory</a>
+                        <p>@Model.AgeCategory+</p>
+                        <p>Price: @Model.Price.ToString("C")</p>
+                        <div class="switch-block switch-block--inline-block">
+                            <button class=" mdc-button switch-block__option">
+                                <span>Add to a wish list</span>
+                                <i class="material-icons">playlist_add</i>
+                            </button>
+                            <button class=" mdc-button switch-block__option switch-block__option--invisible">
+                                <span>Added to a wish list</span>
+                                <i class="material-icons">playlist_add_check</i>
+                            </button>
+                        </div>
+                        <button class="mdc-button mdc-button--raised mdc-ripple-surface mdc-ripple-surface--primary">
+                            <div class="mdc-button__label">
+                                Download
+                            </div>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="item__slideshow">
+                    <button class="mdc-button slideshow__button slideshow__button--left">
+                        <i class="material-icons">keyboard_arrow_left</i>
+                    </button>
+                    <div class="slideshow__content">
+                        <div class="slideshow__collection">
+                            <div class="slideshow__item">
+                                <img class="item__logo" src="@Model.LogoUrl" alt="Alternate Text" />
+                            </div>
+                            <div class="slideshow__item">
+                                <img class="item__logo" src="@Model.LogoUrl" alt="Alternate Text" />
+                            </div>
+                            <div class="slideshow__item">
+                                <img class="item__logo" src="@Model.LogoUrl" alt="Alternate Text" />
+                            </div>
+                            <div class="slideshow__item">
+                                <img class="item__logo" src="@Model.LogoUrl" alt="Alternate Text" />
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mdc-button slideshow__button slideshow__button--right">
+                        <i class="material-icons">keyboard_arrow_right</i>
+                    </button>
+                </div>
+                <div class="item__description">
+                    <div class="description__item">
+                        <div class="description__content description__content--hidden">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt dolor ac erat pretium ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras suscipit venenatis nisl, sed dictum libero cursus commodo. Maecenas eu nisl interdum sapien tincidunt consequat id ut diam. Integer viverra turpis non suscipit mollis. Maecenas ut ipsum tortor. Nulla blandit mi a ultricies ultricies. Pellentesque sollicitudin nisi nisi, eu eleifend odio gravida et. Nam auctor id urna vitae ultrices. Sed a urna laoreet, ornare ante dictum, molestie mauris. Donec eros ipsum, ultrices sit amet sapien eu, fringilla rutrum leo. Sed ullamcorper imperdiet dui ac ultrices. Curabitur tortor nibh, finibus ut euismod sed, commodo convallis arcu.
+
+                            Vestibulum eu leo posuere ante tempus mollis. Duis odio magna, interdum at sem pharetra, sollicitudin porttitor quam. Curabitur eu volutpat arcu. Nam quis dui fringilla, viverra libero non, dapibus ex. Fusce mollis pulvinar mauris et tristique. Maecenas nec nunc non nulla euismod egestas. Suspendisse eu aliquet sem, nec molestie nulla. Vivamus ut blandit ligula. Donec egestas elit sit amet felis pellentesque porttitor. In hac habitasse platea dictumst. In nibh mi, tristique non arcu in, commodo dapibus eros. Nullam ligula augue, ultricies vitae tellus non, ornare congue mi. Sed sed purus faucibus, rhoncus sapien sed, rhoncus mauris. Suspendisse molestie, mi nec aliquam condimentum, erat est porta est, nec faucibus nulla lectus et nulla. Sed iaculis nulla nec congue tincidunt. Etiam sed leo turpis.
+
+                            Donec ac ex ac nibh sollicitudin rutrum at sed magna. Proin placerat faucibus magna a rhoncus. Etiam maximus ante at porttitor elementum. Duis id augue non augue vulputate facilisis. Duis posuere eleifend lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris id fermentum est. Sed at aliquet ipsum. Vivamus vulputate nisl eget mollis fringilla. Sed et interdum augue, in viverra libero. Aliquam consectetur nunc quis dolor efficitur varius. Pellentesque luctus lectus ligula, luctus tincidunt justo malesuada sit amet. Nam at eleifend purus. Sed sodales in sem et aliquet. Vestibulum in lacus eu turpis sodales fringilla efficitur a augue.
+
+                            Nam fermentum, lacus id maximus volutpat, lorem nunc finibus tortor, nec pellentesque purus diam id odio. Integer sagittis tortor in mauris malesuada, sed pellentesque quam congue. Pellentesque imperdiet vel lorem quis gravida. Sed pulvinar volutpat maximus. Pellentesque urna nisi, maximus vel nisi sit amet, lobortis ultricies odio. Nullam ut enim quis mauris finibus maximus. Duis neque velit, viverra vitae ullamcorper vitae, elementum pulvinar ante. Integer feugiat cursus tristique. Nunc placerat, nisl ut vulputate pellentesque, tellus dolor vulputate tortor, vel faucibus mauris lectus eget elit. Pellentesque mauris nunc, viverra eu gravida nec, eleifend vel velit. Maecenas sagittis nisi id mi tempor, id euismod metus dictum. Proin faucibus efficitur lobortis.
+
+                            Suspendisse ipsum nisi, molestie quis facilisis nec, accumsan eget nunc. Nam eu diam in velit rhoncus varius sit amet in sapien. Ut nibh enim, aliquet et lorem eu, laoreet rhoncus orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec et luctus purus, sed venenatis justo. Nunc facilisis ultricies mi, nec egestas lectus aliquet nec. Duis a pretium nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus faucibus massa magna, at interdum diam faucibus eget. Suspendisse sed scelerisque turpis.
+                        </div>
+                        <div class="switch-block description__switchBlock">
+                            <button class=" mdc-button switch-block__option description__button">
+                                <span class="mdc-button__label">Detailed</span>
+                            </button>
+                            <button class=" mdc-button switch-block__option switch-block__option--invisible description__button">
+                                <span class="mdc-button__label">Hide</span>
+                            </button>
+                        </div>
+                    </div>
+                    <hr class="description__line" />
+                    <div class="description__item ">
+
+                        <div class="table">
+                            <div class="table__row">
+                                <span class="table__header">Additional information</span>
+                            </div>
+                            <div class="table__row">
+
+                                <div class="description__content table__item">
+                                    <span class="table__itemheader">Header1</span>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean</span>
+                                </div>
+                                <div class="description__content table__item">
+                                    <span class="table__itemheader">Header2</span>
+                                    <span>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt dolor ac erat pretium ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras suscipit venenatis nisl, sed dictum libero cursus commodo. Maecenas eu nisl interdum sapien tincidunt consequat id ut diam. Integer viverra turpis non suscipit mollis. Maecenas ut ipsum tortor. Nulla blandit mi a ultricies ultricies. Pellentesque sollicitudin nisi nisi, eu eleifend odio gravida et. Nam auctor id urna vitae ultrices. Sed a urna laoreet, ornare ante dictum, molestie mauris. Donec eros ipsum, ultrices sit amet sapien eu, fringilla rutrum leo. Sed ullamcorper imperdiet dui ac ultrices. Curabitur tortor nibh, finibus ut euismod sed, commodo convallis arcu.Vestibulum eu leo posuere ante tempus mollis. Duis odio magna, interdum at sem pharetra, sollicitudin porttitor quam. Curabitur eu volutpat arcu. Nam quis dui fringilla, vi
+                                    </span>
+                                </div>
+                                <div class="description__content table__item">
+                                    <span class="table__itemheader">Header3</span>
+                                    <span>orem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt dolor ac erat pretium ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridicul</span>
+                                </div>
+                            </div>
+                            <div class="table__row">
+                                <div class="description__content table__item">
+                                    <span class="table__itemheader">Header4</span>
+                                    <span>orem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt dolor ac erat pretium ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridicul</span>
+                                </div>
+
+                                <div class="description__content table__item"></div>
+                                <div class="description__content table__item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="mdc-elevation--z5 table--main__similar">
+
+                <div class="table table--similar">
+                    <div class="table__column">
+                        <span class="table__header similar__header">Similar</span>
+                    </div>
+
+                    <div class="mdc-card store-card">
+                        <div class="mdc-card__primary-action mdc-card__primary-action--small">
+                            <div class="mdc-card__media mdc-card__media--square mdc-card__media--small" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                            </div>
+                            <div class="card__descrition">
+                                <h2 class="card__descrition__header">Fishes</h2>
+                                <h2 class="card__descrition__subtitle">FishProvider</h2>
+                                <h5 class="card__descrition__subtitle card__descrition__subtitle--price">Price: @Model.Price.ToString("C")</h5>
+                            </div>
+                        </div>
+                        <div class="mdc-card__actions">
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                            <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                    aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                                <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                                <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                            </button>
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                        </div>
+                    </div>
+
+                    <div class="mdc-card store-card">
+                        <div class="mdc-card__primary-action mdc-card__primary-action--small">
+                            <div class="mdc-card__media mdc-card__media--square mdc-card__media--small" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                            </div>
+                            <div class="card__descrition">
+                                <h2 class="card__descrition__header">Fishes</h2>
+                                <h2 class="card__descrition__subtitle">FishProvider</h2>
+                            </div>
+                        </div>
+                        <div class="mdc-card__actions">
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                            <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                    aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                                <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                                <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                            </button>
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                        </div>
+                    </div>
+
+                    <div class="mdc-card store-card">
+                        <div class="mdc-card__primary-action mdc-card__primary-action--small">
+                            <div class="mdc-card__media mdc-card__media--square mdc-card__media--small" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                            </div>
+                            <div class="card__descrition">
+                                <h2 class="card__descrition__header">Fishes</h2>
+                                <h2 class="card__descrition__subtitle">FishProvider</h2>
+                            </div>
+                        </div>
+                        <div class="mdc-card__actions">
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                            <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                    aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                                <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                                <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                            </button>
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                        </div>
+                    </div>
+
+
+                    <div class="mdc-card store-card">
+                        <div class="mdc-card__primary-action mdc-card__primary-action--small">
+                            <div class="mdc-card__media mdc-card__media--square mdc-card__media--small" style="background-image: url('@Url.Content("~/images/examples/lots-of-fish-639x470.jpg")')">
+                            </div>
+                            <div class="card__descrition">
+                                <h2 class="card__descrition__header">Fishes</h2>
+                                <h2 class="card__descrition__subtitle">FishProvider</h2>
+                            </div>
+                        </div>
+                        <div class="mdc-card__actions">
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Download">get_app</button>
+                            <button class="mdc-icon-button mdc-card__action mdc-card__action--icon add-to-favorites"
+                                    aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                                <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                                <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                            </button>
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+        </div>
+    </div>
+}

@@ -1,0 +1,93 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewData["Title"] - 2doit</title>
+    <link href="~/css/material-components-web.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="~/css/site.css" rel="stylesheet" />
+    <script src="~/js/material-components-web.js"></script>
+</head>
+<body class="mdc-typography">
+    <header class="mdc-top-app-bar app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <a asp-controller="Store" asp-action="Index" id="header-logo"><img class="mdc-button__icon header-icon" src="~/images/res/mipmap-mdpi/2doit_logo.png" alt="Logo" /></a>
+                <form class="header-form" asp-controller="Home" asp-action="Filter">
+
+                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--no-label mdc-text-field--on-header">
+
+                        <input class="mdc-text-field__input mdc-text-field__input--on-header" type="search" aria-label="Filter" />
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <button class="mdc-button mdc-theme--on-primary mdc-theme--secondary-bg"><i class=" material-icons" type="submit">search</i></button>
+                </form>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <form class="mdc-top-app-bar__form" asp-controller="Account" asp-action="Login" method="get">
+                    <button class="mdc-button mdc-theme--on-primary mdc-theme--secondary-bg"><span class="mdc-button__label">Login</span></button>
+                </form>
+            </section>
+        </div>
+    </header>
+    <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open ">
+        <div class="mdc-drawer__content">
+            <nav class="mdc-list">
+                <a class="mdc-list-item" id="category--one" asp-controller="Store" asp-action="CategoryOne" asp-route-id="">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">looks_one</i>
+                    <span class="mdc-list-item__text">Category</span>
+                </a>
+                <a class="mdc-list-item" id="category--two" asp-controller="Store" asp-action="CategoryTwo" asp-route-id="">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">looks_two</i>
+                    <span class="mdc-list-item__text">Category</span>
+                </a>
+                <a class="mdc-list-item" id="category--three" asp-controller="Store" asp-action="CategoryThree" asp-route-id="">
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">looks_3</i>
+                    <span class="mdc-list-item__text">Category</span>
+                </a>
+            </nav>
+            <hr class="mdc-list-divider" />
+            <nav class="mdc-list">
+                <a class="mdc-list-item" asp-controller="Account" asp-action="Settings">
+                    <span class="mdc-list-item__text">Account</span>
+                </a>
+                <a class="mdc-list-item" asp-controller="Account" asp-action="Subscriptions">
+                    <span class="mdc-list-item__text">My subscriptions</span>
+                </a>
+                <a class="mdc-list-item" asp-controller="Account" asp-action="WishList">
+                    <span class="mdc-list-item__text">Wish list</span>
+                </a>
+                <a class="mdc-list-item" asp-controller="Account" asp-action="PaymentMethods">
+                    <span class="mdc-list-item__text">Payment methods</span>
+                </a>
+                <a class="mdc-list-item" asp-controller="Account" asp-action="Actions">
+                    <span class="mdc-list-item__text">My actions</span>
+                </a>
+            </nav>
+            <hr class="mdc-list-divider mdc-list-divider--last" />
+        </div>
+    </aside>
+    <div class="wrapper">
+        <div class="mdc-drawer-app-content">
+            @RenderSection("FixedBar", false)
+            <main class="main-content ">
+
+                @RenderBody()
+            </main>
+        </div>
+        <footer class="mdc-theme--primary mdc-theme--primary-bg footer">
+            <div class="footer-row">
+                <section class="footer__section footer__section--align-start">
+                    <p class="mdc-theme--on-primary mdc-typography--caption">&#169 2DoItPlay</p>
+                </section>
+                <section class="footer__section footer__section--align-end">
+                    <button class="mdc-icon-button"><img class="mdc-icon-button__icon" src="~/images/social/facebook-24.png" alt="Facebook" /></button>
+                    <button class="mdc-icon-button"><img class="mdc-icon-button__icon" src="~/images/social/instagram-24.png" alt="Instagram" /></button>
+                </section>
+            </div>
+        </footer>
+    </div>
+    <script src="~/js/site.js"></script>
+</body>
+</html>

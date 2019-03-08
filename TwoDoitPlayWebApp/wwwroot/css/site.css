@@ -1,0 +1,436 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+
+
+.mdc-drawer {
+    height: auto;
+    padding-top: 64px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mdc-drawer {
+    position: fixed;
+}
+
+.mdc-drawer-app-content {
+    flex: auto;
+    overflow: auto;
+    position: relative;
+    min-height: calc(100% - 64px);
+    margin-left: 256px;
+    margin-right: 0;
+}
+
+.main-content {
+    overflow: auto;
+    padding-left: 10px;
+    padding-top: 128px;
+}
+
+
+.mdc-top-app-bar {
+    z-index: 7;
+    min-width: 600px;
+}
+
+.mdc-text-field--on-header:not(.mdc-text-field--disabled) {
+    height: 36px;
+    background: white;
+    max-width: 440px;
+    border-radius: 0;
+}
+
+
+.my-search {
+    background-color: #ffffff;
+    height: 36px;
+    max-width: 440px;
+}
+
+.header-form {
+    margin-bottom: 0;
+    max-width: 500px;
+}
+
+.header-icon {
+    width: 100%;
+    height: 100%;
+}
+
+#header-logo {
+    margin-right: 50px;
+    height: 48px;
+    width: 48px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.footer-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.footer__section {
+    display: inline-flex;
+    width: auto;
+    align-items: center;
+    padding: 8px 12px;
+    z-index: 1;
+}
+
+.footer__section--align-start {
+    justify-content: flex-start;
+}
+
+.footer__section--align-end {
+    justify-content: flex-end;
+}
+
+#category--one:hover {
+    background-color: green;
+    color: white;
+}
+
+#category--two:hover {
+    background-color: red;
+    color: white;
+}
+
+#category--three:hover {
+    background-color: blueviolet;
+    color: white;
+}
+
+
+
+.fixedbar {
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    padding-top: 64px;
+    width: 100%;
+    z-index: 6;
+}
+
+#menubuttongenre:not(:disabled) {
+    height: 48px;
+    color: var(--mdc-theme-text-primary-on-light);
+    background-color: var(--mdc-theme-background);
+}
+
+.mdc-tab-bar {
+    width: auto;
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
+.store-card {
+    width: 220px;
+}
+
+.mdc-card__actions {
+    justify-content: space-between;
+}
+
+.actions {
+    display: inline-flex;
+}
+
+.actions--align-start {
+    justify-content: flex-start;
+}
+
+.actions--align-end {
+    justify-content: flex-end;
+}
+
+.mdc-card {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.mdc-drawer .mdc-list-divider--last {
+    margin-bottom: 0;
+}
+
+.card-gallery {
+    /*padding: 24px;*/
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.table--main__item {
+    width: 600px;
+    padding: 24px;
+}
+
+.table--main__login {
+    width: 100%;
+    min-height: calc(100% - 256px);
+    padding: 24px;
+}
+
+.table--main__account {
+    width: 500px;
+    padding: 24px;
+}
+
+
+.item__logo {
+    width: 180px;
+    height: 180px;
+}
+
+.item__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-bottom: 10px;
+}
+
+.item__top--left-section {
+    margin-right: 10px;
+}
+
+.item__top--right-section {
+    margin-left: 10px;
+}
+
+.item__header {
+    margin-top: 0;
+}
+
+.item__slideshow {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.slideshow__content {
+    height: inherit;
+    overflow: hidden;
+    width: 500px;
+    position: relative;
+    left: 0;
+}
+
+.slideshow__button {
+    height: inherit;
+    width: 50px;
+}
+
+.slideshow__collection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: inherit;
+    position: absolute;
+    overflow: visible;
+    align-items: center;
+}
+
+.slideshow__item {
+    padding-right: 10px;
+}
+
+.description__content {
+    height: auto;
+}
+
+.description__content--hidden {
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.item__description {
+    margin-bottom: 10px;
+}
+
+.description__button {
+    margin: 10px auto;
+    display: flex;
+}
+
+.description__table {
+    display: flex;
+    flex-direction: column;
+}
+
+.table__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+
+.table__column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.table__item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+}
+
+.table--login {
+    min-width: 300px;
+    max-width: 100%;
+}
+
+.table__item:first-child {
+    padding-left: 0;
+}
+
+.table__item:last-child {
+    padding-right: 0;
+}
+
+.table__header {
+    text-transform: uppercase;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.table__itemheader {
+    font-weight: bold;
+}
+
+.column__item--center {
+    margin: 0 auto;
+    flex-shrink: 1;
+}
+
+.table--main__similar {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.table--similar {
+    padding: 24px;
+}
+
+.table--main {
+    padding: 24px;
+}
+
+.table__row--main {
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.similar__header {
+    margin-bottom: 10px;
+}
+
+.card__descrition {
+    padding: 10px;
+}
+
+.card__descrition__header {
+    font-size: 1.2rem;
+    margin: 3px 0;
+}
+
+.card__descrition__subtitle {
+    font-size: 0.8rem;
+    margin: 3px 0;
+}
+
+.mdc-card__media--small {
+    width: 96px;
+}
+
+.mdc-card__primary-action--small {
+    flex-direction: row;
+    padding: 4px;
+}
+
+.switch-block__option--invisible {
+    display: none;
+}
+
+.switch-block {
+    width: auto;
+    height: auto;
+}
+
+.switch-block--inline-block {
+    display: inline-block;
+}
+
+@media screen and (max-width: 1300px) {
+    .table--main__similar {
+        display: none;
+    }
+}
+
+.mdc-top-app-bar__form {
+    margin: 0;
+}
+
+.table__column--padding {
+    padding: 24px;
+}
+
+.table__row--space-between {
+    justify-content: space-between;
+}
+
+.table__section--right {
+    flex: 1 1 auto;
+}
+
+.table__section--left {
+    flex: 3 1 auto;
+}
+
+.table__section {
+    display: inline-flex;
+    width: auto;
+    align-items: center;
+}
+
+.table__column--side-padding {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.card__descrition__subtitle--price {
+    margin-top: 10px;
+}
